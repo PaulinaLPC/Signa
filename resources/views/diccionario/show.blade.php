@@ -10,23 +10,37 @@
 
     <div class="sign-detail-grid">
 
-        <!-- FOTOGRAFIA O VIDEO -->
+        <!-- VIDEO O FOTOGRAFIA PRINCIPAL -->
         <div class="sign-media">
 
-            @if ($sena->video)
-                <video
-                    src="{{ asset($sena->video) }}"
-                    controls
-                    preload="metadata"
-                    @if ($sena->imagen) poster="{{ asset($sena->imagen) }}" @endif
-                ></video>
-            @elseif ($sena->imagen)
-                <img src="{{ asset($sena->imagen) }}" alt="Seña de {{ $sena->palabra }}">
+            @if ($sena->youtube_id)
+
+                <div class="sign-video-embed">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/{{ $sena->youtube_id }}?rel=0"
+                        title="Video de la seña {{ $sena->palabra }}"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+
+            @elseif ($sena->video_url)
+
+                <video src="{{ $sena->video_url }}" controls loop playsinline preload="metadata">
+                    Tu navegador no puede reproducir este video.
+                </video>
+
+            @elseif ($sena->imagen_url)
+
+                <img src="{{ $sena->imagen_url }}" alt="Seña de {{ $sena->palabra }}">
+
             @else
+
                 <div class="sign-media-empty">
                     <span>{{ $sena->categoria->icono }}</span>
                     <p>Fotografía y video próximamente.</p>
                 </div>
+
             @endif
 
         </div>
@@ -43,6 +57,12 @@
             <h2>¿Cómo se realiza?</h2>
 
             <p>{{ $sena->descripcion ?? 'Descripción no disponible por el momento.' }}</p>
+
+            {{-- Solo se muestra si se agregó una foto propia además del video --}}
+            @if ($sena->tiene_video && $sena->imagen)
+                <h2 class="sign-photo-title">Fotografía</h2>
+                <img src="{{ $sena->imagen_url }}" alt="Fotografía de la seña {{ $sena->palabra }}" class="sign-photo">
+            @endif
 
         </div>
 
