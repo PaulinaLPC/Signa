@@ -30,9 +30,10 @@
             <a href="{{ route('inicio') }}">Inicio</a>
             <a href="{{ route('inicio') }}#sobre-signa">Nosotros</a>
             <a href="{{ route('inicio') }}#como-funciona">Conócenos</a>
+            <a href="{{ route('diccionario.index') }}">Diccionario</a>
         </nav>
 
-        <a href="{{ route('inicio') }}#como-funciona" class="header-button">
+        <a href="{{ route('diccionario.index') }}" class="header-button">
             Explorar <span>↗</span>
         </a>
 
