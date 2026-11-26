@@ -29,10 +29,15 @@
 
         <span class="admin-sidebar-label">PANEL</span>
 
-        <nav class="admin-nav">
+                <nav class="admin-nav">
             <a href="{{ route('admin.index') }}"
                class="{{ request()->routeIs('admin.index') ? 'active' : '' }}">
                 📊 Dashboard
+            </a>
+
+            <a href="{{ route('admin.usuarios.index') }}"
+               class="{{ request()->routeIs('admin.usuarios.*') ? 'active' : '' }}">
+                👥 Usuarios
             </a>
 
             <a href="{{ route('admin.categorias.index') }}"
@@ -45,10 +50,11 @@
                 🤟 Señas
             </a>
 
-            <span class="admin-nav-soon">👥 Usuarios <small>Pronto</small></span>
-            <span class="admin-nav-soon">📚 Lecciones <small>Pronto</small></span>
+            <a href="{{ route('admin.lecciones.index') }}"
+               class="{{ request()->routeIs('admin.lecciones.*') ? 'active' : '' }}">
+                📚 Lecciones
+            </a>
         </nav>
-
         <div class="admin-sidebar-footer">
             <a href="{{ route('inicio') }}">← Ver sitio</a>
 

@@ -9,6 +9,9 @@ use App\Http\Controllers\LeccionController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\SenaController;
+use App\Http\Controllers\Admin\UsuarioController;
+use App\Http\Controllers\Admin\LeccionController as AdminLeccionController;
+use App\Http\Controllers\Admin\EjercicioController;
 
 // Módulo 1: Página de presentación
 Route::get('/', [InicioController::class, 'index'])->name('inicio');
@@ -50,4 +53,21 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('senas', SenaController::class)
         ->except('show')
         ->parameters(['senas' => 'sena']);
+
+    Route::resource('usuarios', UsuarioController::class)
+        ->except('show')
+        ->parameters(['usuarios' => 'usuario']);
+
+    Route::resource('lecciones', AdminLeccionController::class)
+        ->except('show')
+        ->parameters(['lecciones' => 'leccion']);
+
+    Route::post('lecciones/{leccion}/generar-ejercicios', [AdminLeccionController::class, 'generarEjercicios'])
+        ->name('lecciones.generar');
+
+    // Ejercicios dentro de cada lección: /admin/lecciones/{leccion}/ejercicios
+    Route::resource('lecciones.ejercicios', EjercicioController::class)
+        ->except('show')
+        ->parameters(['lecciones' => 'leccion', 'ejercicios' => 'ejercicio'])
+        ->scoped();
 });

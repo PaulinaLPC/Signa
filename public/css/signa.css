@@ -2239,3 +2239,54 @@ button.header-button {
     color: var(--muted);
     font-size: 13px;
 }
+
+/* =========================================
+   20. PANEL: USUARIOS, LECCIONES Y EJERCICIOS
+========================================= */
+
+.admin-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-avatar {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid var(--black);
+    border-radius: 50%;
+    background: var(--purple);
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.admin-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.admin-chip {
+    padding: 4px 10px;
+    border: 1px solid #c9c3b6;
+    border-radius: 20px;
+    background: white;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.admin-chip-correct {
+    border-color: var(--black);
+    background: var(--green);
+    font-weight: 800;
+}
+
+.admin-toolbar-actions form {
+    display: inline-flex;
+}
