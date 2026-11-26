@@ -6,6 +6,9 @@ use App\Http\Controllers\DiccionarioController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\LeccionController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CategoriaController;
+use App\Http\Controllers\Admin\SenaController;
 
 // Módulo 1: Página de presentación
 Route::get('/', [InicioController::class, 'index'])->name('inicio');
@@ -37,5 +40,14 @@ Route::middleware('auth')->group(function () {
 
 // Módulo 4: Panel de administración (solo administradores)
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::view('/', 'admin.index')->name('index');
+
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+    Route::resource('categorias', CategoriaController::class)
+        ->except('show')
+        ->parameters(['categorias' => 'categoria']);
+
+    Route::resource('senas', SenaController::class)
+        ->except('show')
+        ->parameters(['senas' => 'sena']);
 });
