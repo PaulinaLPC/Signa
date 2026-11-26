@@ -29,14 +29,45 @@
         <nav class="navigation">
             <a href="{{ route('inicio') }}">Inicio</a>
             <a href="{{ route('inicio') }}#sobre-signa">Nosotros</a>
-            <a href="{{ route('inicio') }}#como-funciona">Conócenos</a>
+            <a href="{{ route('diccionario.index') }}">Diccionario</a>
+
+            @auth
+                <a href="{{ route('lecciones.index') }}">Lecciones</a>
+
+                @if (auth()->user()->esAdmin())
+                    <a href="{{ route('admin.index') }}">Panel</a>
+                @endif
+            @else
+                <a href="{{ route('inicio') }}#como-funciona">Conócenos</a>
+            @endauth
         </nav>
 
-        <a href="{{ route('inicio') }}#como-funciona" class="header-button">
-            Explorar <span>↗</span>
-        </a>
+        <div class="header-actions">
+            @auth
+                <a href="{{ route('perfil') }}" class="header-link">
+                    Hola, {{ explode(' ', auth()->user()->name)[0] }}
+                </a>
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="header-button">Cerrar sesión</button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="header-link">Iniciar sesión</a>
+
+                <a href="{{ route('registro') }}" class="header-button">
+                    Registrarse <span>↗</span>
+                </a>
+            @endauth
+        </div>
 
     </header>
+
+    @if (session('exito'))
+        <div class="alert alert-success">
+            {{ session('exito') }}
+        </div>
+    @endif
 
     <main>
         @yield('content')
