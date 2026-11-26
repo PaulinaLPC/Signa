@@ -981,3 +981,330 @@ a {
     border-radius: 12px;
     box-shadow: 3px 4px 0 var(--black);
 }
+
+/* =========================================
+   13. ENCABEZADO CON SESION Y ALERTAS
+========================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #45413c;
+    transition: .2s;
+}
+
+.header-link:hover {
+    color: #8a65a8;
+}
+
+button.header-button {
+    background: none;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: inherit;
+    cursor: pointer;
+}
+
+.alert {
+    padding: 14px 5%;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.alert-success {
+    background: var(--green);
+    border-bottom: 1px solid #a9d3ac;
+}
+
+
+/* =========================================
+   14. REGISTRO E INICIO DE SESION
+========================================= */
+
+.auth-section {
+    min-height: 75vh;
+    padding: 70px 5%;
+    background: var(--cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 40px;
+    background: white;
+    border: 1.5px solid var(--black);
+    border-radius: 16px;
+    box-shadow: 5px 6px 0 var(--black);
+}
+
+.auth-card h1 {
+    margin: 14px 0 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.auth-subtitle {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.auth-form {
+    display: grid;
+    gap: 18px;
+}
+
+.form-group {
+    display: grid;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-group input {
+    padding: 13px 15px;
+    border: 1.5px solid var(--black);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: .2s;
+}
+
+.form-group input:focus {
+    box-shadow: 0 0 0 4px var(--purple);
+}
+
+.form-group .input-error {
+    border-color: #c0392b;
+    background: #fff6f5;
+}
+
+.form-error {
+    color: #c0392b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-hint {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.form-check input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--black);
+}
+
+.auth-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 22px;
+    border: 2px solid var(--black);
+    border-radius: 13px;
+    background: var(--purple);
+    box-shadow: 0 4px 0 var(--black);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.auth-button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 var(--black);
+}
+
+.auth-switch {
+    margin-top: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.auth-switch a {
+    color: var(--black);
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   15. PERFIL
+========================================= */
+
+.profile-section {
+    padding: 50px 8% 90px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.profile-avatar {
+    width: 84px;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 3px 4px 0 var(--black);
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.profile-identity h1 {
+    margin: 6px 0 2px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.profile-identity p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.role-badge {
+    margin-left: auto;
+    padding: 7px 14px;
+    border: 1px solid var(--black);
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.role-student {
+    background: var(--green);
+}
+
+.role-admin {
+    background: var(--pink);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.profile-card {
+    padding: 30px;
+    background: white;
+    border: 1.5px solid var(--black);
+    border-radius: 14px;
+    box-shadow: 4px 5px 0 var(--black);
+}
+
+.profile-card h2 {
+    margin-bottom: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+}
+
+.profile-card-learning {
+    background: var(--cream);
+}
+
+.profile-card-learning p {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.profile-stats div {
+    padding: 16px 10px;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    background: white;
+    text-align: center;
+}
+
+.profile-stats strong {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+}
+
+.profile-stats span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.profile-meta {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .header-link {
+        font-size: 12px;
+    }
+
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .role-badge {
+        margin-left: 0;
+    }
+}

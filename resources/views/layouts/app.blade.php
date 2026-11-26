@@ -33,11 +33,32 @@
             <a href="{{ route('diccionario.index') }}">Diccionario</a>
         </nav>
 
-        <a href="{{ route('diccionario.index') }}" class="header-button">
-            Explorar <span>↗</span>
-        </a>
+        <div class="header-actions">
+            @auth
+                <a href="{{ route('perfil') }}" class="header-link">
+                    Hola, {{ explode(' ', auth()->user()->name)[0] }}
+                </a>
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="header-button">Cerrar sesión</button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="header-link">Iniciar sesión</a>
+
+                <a href="{{ route('registro') }}" class="header-button">
+                    Registrarse <span>↗</span>
+                </a>
+            @endauth
+        </div>
 
     </header>
+
+    @if (session('exito'))
+        <div class="alert alert-success">
+            {{ session('exito') }}
+        </div>
+    @endif
 
     <main>
         @yield('content')
