@@ -1,0 +1,606 @@
+/* =========================================
+   1. CONFIGURACION GENERAL
+========================================= */
+
+:root {
+    --cream: #f8f4e9;
+    --white: #ffffff;
+    --black: #202020;
+    --green: #c8e8ca;
+    --pink: #f3c3c8;
+    --blue: #b9d9ed;
+    --purple: #e8d8fa;
+    --muted: #68645e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   2. ENCABEZADO
+========================================= */
+
+.header {
+    height: 76px;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #e9e6df;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.brand-symbol {
+    width: 31px;
+    height: 31px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navigation a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #45413c;
+    transition: .2s;
+}
+
+.navigation a:hover {
+    color: #8a65a8;
+}
+
+.header-button {
+    border: 1px solid var(--black);
+    border-radius: 30px;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.header-button:hover {
+    background: var(--black);
+    color: white;
+}
+
+.header-button span {
+    margin-left: 12px;
+}
+
+
+/* =========================================
+   3. PORTADA PRINCIPAL
+========================================= */
+
+.hero {
+    min-height: 590px;
+    padding: 55px 5%;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd8ca;
+}
+
+.hero-content {
+    max-width: 590px;
+    padding: 15px 20px 15px 0;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #71634e;
+}
+
+.hero h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(48px, 5.5vw, 73px);
+    font-weight: 800;
+    letter-spacing: -4px;
+    line-height: 1.05;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 17px;
+}
+
+.hero-content .hero-extra {
+    font-size: 14px;
+    margin-bottom: 27px;
+}
+
+.start-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    padding: 16px 22px;
+    border: 2px solid var(--black);
+    border-radius: 13px;
+    background: var(--purple);
+    box-shadow: 0 4px 0 var(--black);
+    font-size: 14px;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.start-button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 var(--black);
+}
+
+.start-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   4. TARJETAS SUPERPUESTAS
+========================================= */
+
+.hero-art {
+    height: 440px;
+    width: 100%;
+    position: relative;
+}
+
+.art-question {
+    position: absolute;
+    top: 0;
+    right: 12%;
+    z-index: 5;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.art-question span {
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.visual-card {
+    position: absolute;
+    width: 275px;
+    min-height: 310px;
+    padding: 20px;
+    border: 1.5px solid var(--black);
+    border-radius: 12px;
+    box-shadow: 3px 4px 0 var(--black);
+    transition: transform .3s;
+}
+
+.card-number {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.card-line {
+    width: 100%;
+    height: 1px;
+    background: var(--black);
+    margin: 15px 0;
+}
+
+.card-front {
+    z-index: 3;
+    background: white;
+    left: 5%;
+    top: 70px;
+}
+
+.card-pink {
+    z-index: 2;
+    background: var(--pink);
+    left: 22%;
+    top: 50px;
+}
+
+.card-blue {
+    z-index: 1;
+    background: var(--blue);
+    left: 39%;
+    top: 30px;
+}
+
+.hand-illustration {
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #faf9f5;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.hand-illustration span {
+    font-size: 75px;
+}
+
+.visual-card h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.visual-card p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #57534e;
+}
+
+.card-decoration {
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 43px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.card-tag {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   5. SECCION NOSOTROS
+========================================= */
+
+.about-section {
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-title h2 {
+    max-width: 480px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 39px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-top: 20px;
+}
+
+.about-description p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   6. SECCION DE FUNCIONES
+========================================= */
+
+.features-section {
+    padding: 85px 8%;
+    background: #faf9f6;
+}
+
+.features-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.features-heading h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    margin: 18px 0;
+}
+
+.features-heading p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    min-height: 260px;
+    padding: 30px;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    box-shadow: 3px 4px 0 #292929;
+    transition: .2s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 7px 0 #292929;
+}
+
+.feature-one {
+    background: #e4f0df;
+}
+
+.feature-two {
+    background: #f5e4e5;
+}
+
+.feature-three {
+    background: #e3eaf3;
+}
+
+.feature-icon {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 28px;
+}
+
+.feature-number {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.feature h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.feature p {
+    color: #615d59;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   7. SECCION FINAL
+========================================= */
+
+.final-section {
+    padding: 90px 10%;
+    background: #29272b;
+    color: white;
+    text-align: center;
+}
+
+.final-section .eyebrow {
+    color: #d8c0ed;
+}
+
+.final-section h2 {
+    max-width: 650px;
+    margin: 22px auto;
+    font-family: 'Manrope', sans-serif;
+    font-size: 43px;
+    line-height: 1.2;
+}
+
+.final-section p {
+    color: #d1cbd5;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.final-button {
+    display: inline-block;
+    padding: 13px 23px;
+    border: 1px solid white;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.final-button:hover {
+    background: white;
+    color: #29272b;
+}
+
+
+/* =========================================
+   8. PIE DE PAGINA
+========================================= */
+
+.footer {
+    padding: 35px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: white;
+    border-top: 1px solid #e9e6df;
+}
+
+.footer-info {
+    display: grid;
+    gap: 4px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer small {
+    color: #817b83;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   9. RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-art {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 15px 5%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .navigation a {
+        font-size: 13px;
+    }
+
+    .header-button {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+        letter-spacing: -2px;
+    }
+
+    .hero-art {
+        height: 380px;
+    }
+
+    .visual-card {
+        width: 220px;
+        min-height: 290px;
+    }
+
+    .card-front {
+        left: 0;
+    }
+
+    .card-pink {
+        left: 14%;
+    }
+
+    .card-blue {
+        left: 28%;
+    }
+
+    .about-section {
+        padding: 70px 7%;
+    }
+
+    .about-title h2,
+    .features-heading h2 {
+        font-size: 30px;
+    }
+
+    .features-section {
+        padding: 65px 6%;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .final-section h2 {
+        font-size: 32px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
