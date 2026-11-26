@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -34,5 +35,11 @@ class User extends Authenticatable
     public function esAdmin(): bool
     {
         return $this->rol === 'admin';
+    }
+
+    // Progreso del usuario en las lecciones
+    public function progresos(): HasMany
+    {
+        return $this->hasMany(Progreso::class);
     }
 }

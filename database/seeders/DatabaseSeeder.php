@@ -20,7 +20,10 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // Datos del diccionario (Módulo 2)
+        // Módulo 2: categorías y señas
         $this->call(DiccionarioSeeder::class);
+
+        // Módulo 3: lecciones y ejercicios (depende del diccionario)
+        $this->call(LeccionSeeder::class);
     }
 }

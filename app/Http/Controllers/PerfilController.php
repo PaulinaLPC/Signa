@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Leccion;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -9,8 +10,18 @@ class PerfilController extends Controller
 {
     public function show(Request $request)
     {
+        $usuario = $request->user();
+        $progresos = $usuario->progresos()->get();
+
+        $totalLecciones = Leccion::count();
+        $completadas = $progresos->where('completada', true)->count();
+
         return view('perfil.show', [
-            'usuario' => $request->user(),
+            'usuario'        => $usuario,
+            'completadas'    => $completadas,
+            'totalLecciones' => $totalLecciones,
+            'aciertos'       => $progresos->sum('aciertos'),
+            'porcentaje'     => $totalLecciones > 0 ? round($completadas / $totalLecciones * 100) : 0,
         ]);
     }
 

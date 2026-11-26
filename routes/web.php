@@ -5,6 +5,7 @@ use App\Http\Controllers\InicioController;
 use App\Http\Controllers\DiccionarioController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\LeccionController;
 
 // Módulo 1: Página de presentación
 Route::get('/', [InicioController::class, 'index'])->name('inicio');
@@ -21,9 +22,20 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'iniciarSesion'])->name('login.store');
 });
 
-// Módulo 3: Usuarios (solo con sesión iniciada)
+// Módulo 3: Usuarios y aprendizaje (solo con sesión iniciada)
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'cerrarSesion'])->name('logout');
+
     Route::get('/perfil', [PerfilController::class, 'show'])->name('perfil');
     Route::put('/perfil', [PerfilController::class, 'update'])->name('perfil.update');
+
+    Route::get('/lecciones', [LeccionController::class, 'index'])->name('lecciones.index');
+    Route::get('/lecciones/{leccion:slug}', [LeccionController::class, 'show'])->name('lecciones.show');
+    Route::get('/lecciones/{leccion:slug}/ejercicios', [LeccionController::class, 'ejercicios'])->name('lecciones.ejercicios');
+    Route::post('/lecciones/{leccion:slug}/ejercicios', [LeccionController::class, 'calificar'])->name('lecciones.calificar');
+});
+
+// Módulo 4: Panel de administración (solo administradores)
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::view('/', 'admin.index')->name('index');
 });

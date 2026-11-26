@@ -1308,3 +1308,391 @@ button.header-button {
         margin-left: 0;
     }
 }
+
+/* =========================================
+   16. LECCIONES Y PROGRESO
+========================================= */
+
+.lessons-hero {
+    padding: 70px 8% 50px;
+    background: var(--cream);
+    border-bottom: 1px solid #ddd8ca;
+    text-align: center;
+}
+
+.lessons-hero h1 {
+    margin: 18px 0 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.lessons-hero > p {
+    margin-bottom: 30px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.progress-summary {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.progress-summary p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.progress-summary strong {
+    color: var(--black);
+}
+
+.progress-bar {
+    height: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--black);
+    border-radius: 20px;
+    background: white;
+}
+
+.progress-bar span {
+    height: 100%;
+    display: block;
+    background: var(--green);
+    border-right: 1.5px solid var(--black);
+    transition: width .4s;
+}
+
+.profile-card-learning .progress-bar {
+    margin-bottom: 18px;
+}
+
+.lessons-content {
+    padding: 50px 8% 90px;
+}
+
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.lesson-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px;
+    background: white;
+    border: 1.5px solid var(--black);
+    border-radius: 14px;
+    box-shadow: 3px 4px 0 var(--black);
+    transition: .2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 7px 0 var(--black);
+}
+
+.lesson-done {
+    background: #eef7ee;
+}
+
+.lesson-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lesson-number {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.lesson-level {
+    padding: 4px 10px;
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    background: var(--purple);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.lesson-icon {
+    margin: 10px 0 4px;
+    font-size: 44px;
+}
+
+.lesson-card h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+}
+
+.lesson-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.lesson-status {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #e9e6df;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.lesson-detail {
+    padding: 45px 8% 90px;
+}
+
+.lesson-header {
+    max-width: 720px;
+    margin-bottom: 45px;
+}
+
+.lesson-header h1 {
+    margin: 16px 0 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.lesson-header .lesson-progress-note {
+    margin-top: 12px;
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.lesson-subtitle {
+    margin-bottom: 22px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+}
+
+.cta-box {
+    margin-top: 55px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: var(--cream);
+    border: 1.5px solid var(--black);
+    border-radius: 14px;
+    box-shadow: 4px 5px 0 var(--black);
+}
+
+.cta-box h2 {
+    margin-bottom: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+}
+
+.cta-box p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   17. RESULTADOS
+========================================= */
+
+.result-box {
+    margin-bottom: 40px;
+    padding: 26px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    border: 1.5px solid var(--black);
+    border-radius: 14px;
+    box-shadow: 4px 5px 0 var(--black);
+}
+
+.result-pass {
+    background: var(--green);
+}
+
+.result-fail {
+    background: var(--pink);
+}
+
+.result-box h2 {
+    margin-bottom: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+}
+
+.result-box p {
+    font-size: 14px;
+}
+
+.result-list {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.result-list small {
+    font-weight: 500;
+}
+
+.result-list .bad {
+    color: #8e2a20;
+}
+
+
+/* =========================================
+   18. EJERCICIOS
+========================================= */
+
+.exercise-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 45px 5% 90px;
+}
+
+.exercise-header {
+    margin-bottom: 30px;
+}
+
+.exercise-header h1 {
+    margin-top: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+}
+
+.form-alert {
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    border: 1.5px solid #c0392b;
+    border-radius: 10px;
+    background: #fff6f5;
+    color: #c0392b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.exercise-form {
+    display: grid;
+    gap: 28px;
+}
+
+.exercise-card {
+    padding: 26px;
+    background: white;
+    border: 1.5px solid var(--black);
+    border-radius: 14px;
+    box-shadow: 4px 5px 0 var(--black);
+}
+
+.exercise-number {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #71634e;
+}
+
+.exercise-media {
+    margin: 16px 0 20px;
+    overflow: hidden;
+    border: 1.5px solid var(--black);
+    border-radius: 12px;
+    background: var(--cream);
+}
+
+.exercise-media img,
+.exercise-media video {
+    width: 100%;
+    max-height: 420px;
+    display: block;
+    object-fit: contain;
+}
+
+.exercise-media .sign-media-empty {
+    height: 220px;
+}
+
+.exercise-card h3 {
+    margin-bottom: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+}
+
+.exercise-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option {
+    position: relative;
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.option span {
+    display: block;
+    padding: 12px 22px;
+    border: 1.5px solid var(--black);
+    border-radius: 10px;
+    background: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.option span:hover {
+    background: var(--cream);
+}
+
+.option input:checked + span {
+    background: var(--purple);
+    box-shadow: 0 3px 0 var(--black);
+    transform: translateY(-2px);
+}
+
+.option input:focus-visible + span {
+    outline: 3px solid #8a65a8;
+    outline-offset: 2px;
+}
+
+.exercise-submit {
+    justify-self: center;
+}
+
+@media (max-width: 600px) {
+
+    .cta-box,
+    .result-box {
+        padding: 22px;
+    }
+
+    .option span {
+        padding: 11px 16px;
+    }
+}

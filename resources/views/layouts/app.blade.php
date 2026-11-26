@@ -29,8 +29,17 @@
         <nav class="navigation">
             <a href="{{ route('inicio') }}">Inicio</a>
             <a href="{{ route('inicio') }}#sobre-signa">Nosotros</a>
-            <a href="{{ route('inicio') }}#como-funciona">Conócenos</a>
             <a href="{{ route('diccionario.index') }}">Diccionario</a>
+
+            @auth
+                <a href="{{ route('lecciones.index') }}">Lecciones</a>
+
+                @if (auth()->user()->esAdmin())
+                    <a href="{{ route('admin.index') }}">Panel</a>
+                @endif
+            @else
+                <a href="{{ route('inicio') }}#como-funciona">Conócenos</a>
+            @endauth
         </nav>
 
         <div class="header-actions">

@@ -59,24 +59,32 @@
 
         </div>
 
-        <!-- APRENDIZAJE (se completa en la Parte B) -->
+        <!-- MI APRENDIZAJE -->
         <div class="profile-card profile-card-learning">
 
             <h2>Mi aprendizaje</h2>
 
-            <p>
-                Aquí podrás consultar tus lecciones, los ejercicios que resolviste
-                y tu progreso en Lengua de Señas Mexicana.
-            </p>
-
-            <div class="profile-stats">
-                <div><strong>0</strong><span>Lecciones</span></div>
-                <div><strong>0</strong><span>Ejercicios</span></div>
-                <div><strong>0%</strong><span>Progreso</span></div>
+            <div class="progress-bar">
+                <span style="width: {{ $porcentaje }}%"></span>
             </div>
 
-            <a href="{{ route('diccionario.index') }}" class="chip chip-active">
-                Explorar el diccionario →
+            <div class="profile-stats">
+                <div>
+                    <strong>{{ $completadas }}/{{ $totalLecciones }}</strong>
+                    <span>Lecciones</span>
+                </div>
+                <div>
+                    <strong>{{ $aciertos }}</strong>
+                    <span>Aciertos</span>
+                </div>
+                <div>
+                    <strong>{{ $porcentaje }}%</strong>
+                    <span>Progreso</span>
+                </div>
+            </div>
+
+            <a href="{{ route('lecciones.index') }}" class="chip chip-active">
+                Ir a mis lecciones →
             </a>
 
         </div>
